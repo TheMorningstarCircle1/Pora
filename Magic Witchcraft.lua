@@ -1,0 +1,1443 @@
+local Library = loadstring(game:HttpGet(
+                               "https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib(
+                   "Magic V.2 Witchcraft Made By ɹɐʇsɓuᴉuɹoW ɐuᴉɹqɐS",
+                   "Midnight")
+
+local Tab = Window:NewTab("Teams")
+local Section = Tab:NewSection("Change Team")
+
+Section:NewButton("Mortal", "", function() 
+    local ohBrickColor1 = BrickColor.new("Fossil")
+
+	game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Weak Witch or Warlock", "", function() 
+    local ohBrickColor1 = BrickColor.new("Lapis")
+
+	game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Pagan Witch", "", function() 
+    local ohBrickColor1 = BrickColor.new("Bright bluish green")
+
+	game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+
+Section:NewButton("Advanced Witch / Warlock", "", function() 
+    local ohBrickColor1 = BrickColor.new("Royal purple")
+
+	game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Fairy", "", function() 
+    local ohBrickColor1 = BrickColor.new("Sea green")
+
+	game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Hex Witch", "", function()
+    local ohBrickColor1 = BrickColor.new("Persimmon")
+
+	game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Angel", "", function()
+    local ohBrickColor1 = BrickColor.new("Cool yellow")
+
+	game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Fallen Angel", "", function()
+    local ohBrickColor1 = BrickColor.new("Black")
+
+	game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Archangel", "", function()
+
+local ohBrickColor1 = BrickColor.new("Fossil")
+game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+
+local ohBrickColor1 = BrickColor.new("Mid gray")
+game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Hecate", "", function()
+
+    local ohBrickColor1 = BrickColor.new("Fossil")
+    game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+    
+    local ohBrickColor1 = BrickColor.new("Dark indigo")
+    game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Royal Bloodline", "", function()
+
+    local ohBrickColor1 = BrickColor.new("Fossil")
+    game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+    
+    local ohBrickColor1 = BrickColor.new("Crimson")
+    game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+Section:NewButton("Egyptian Queen", "", function()
+
+    local ohBrickColor1 = BrickColor.new("Fossil")
+    game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+    
+    local ohBrickColor1 = BrickColor.new("Really red")
+    game:GetService("ReplicatedStorage").Remotes.ChangeTeam:FireServer(ohBrickColor1)
+end)
+
+local Tab = Window:NewTab("Abilities")
+local Section = Tab:NewSection("Random Abilities")
+
+Section:NewToggle("Hex Ignis", "Keybind (1)", function()
+
+local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "1" then
+            local player = getPlayer()
+            if player then
+
+                -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Ignis",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+        -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").HellFire:FireServer(unpack(args))
+
+end
+end
+end)
+end)
+
+Section:NewButton("Ignis All", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Let the fire burn our body",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+               -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").HellFire:FireServer(unpack(args))
+
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Holy Fire", "Keybind (2)", function()
+
+
+    local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "2" then
+            local player = getPlayer()
+            if player then
+
+                -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Holy Fire",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+       -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").HellFire3:FireServer(unpack(args))
+
+
+end
+end
+end)
+end)
+
+Section:NewButton("Holy Fire All", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "The light burns you all",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+              -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").HellFire3:FireServer(unpack(args))
+
+
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Hellfire", "Keybind (3)", function()
+
+    local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "3" then
+            local player = getPlayer()
+            if player then
+
+                 -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Hellfire",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+       -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").HellFire2:FireServer(unpack(args))
+
+
+end
+end
+end)
+end)
+
+Section:NewButton("Hellfire All", "", function()
+ -- Script generated by SimpleSpy - credits to exx#9394
+
+ local args = {
+    [1] = "I am the Dark Lord's sword!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+ -- Script generated by SimpleSpy - credits to exx#9394
+
+ local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").HellFire2:FireServer(unpack(args))
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Freeze Fire", "Keybind (4)", function()
+
+    local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "4" then
+            local player = getPlayer()
+            if player then
+
+                 -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Freeze",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+
+       -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").FreezeFire:FireServer(unpack(args))
+
+
+end
+end
+end)
+end)
+
+Section:NewButton("Freeze Fire All", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Everyone Freeze",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+               -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").FreezeFire:FireServer(unpack(args))
+
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Vine Trap", "Keybind (5)", function()
+
+
+    local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "5" then
+            local player = getPlayer()
+            if player then
+
+                -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Grow",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+       -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").VineTrap:FireServer(unpack(args))
+
+
+end
+end
+end)
+end)
+
+Section:NewButton("Vine Trap All", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "The vines are rising",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+               -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").VineTrap:FireServer(unpack(args))
+
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Holy Heal", "Keybind (6)", function()
+
+    local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "6" then
+            local player = getPlayer()
+            if player then
+
+                  -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "The light will heal you",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+
+       -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").HealFire2:FireServer(unpack(args))
+
+end
+end
+end)
+end)
+
+Section:NewButton("Holy Heal All", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "The light will heal us",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+               -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").HealFire2:FireServer(unpack(args))
+
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Normal Heal", "Keybind (7)", function()
+
+    local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "7" then
+            local player = getPlayer()
+            if player then
+
+                  -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Heal her body, and Heal her heart, return her health from the start.",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+
+       -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").HealFire:FireServer(unpack(args))
+
+end
+end
+end)
+end)
+
+Section:NewButton("Normal Heal All", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Rivers must flow that blood may not. Blood be bound, and blood be clot.",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+               -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").HealFire:FireServer(unpack(args))
+
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Poison Fire", "Keybind (8)", function()
+
+    local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "8" then
+            local player = getPlayer()
+            if player then
+
+                
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Let this poison, flow to the witch hunter body",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+       -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").PoisonFire:FireServer(unpack(args))
+
+end
+end
+end)
+end)
+
+Section:NewButton("Poison Fire All", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Let this poison, flow to all the witch hunters body",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+            -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+
+}
+
+game:GetService("ReplicatedStorage").PoisonFire:FireServer(unpack(args))
+
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Angel Blessing", "Keybind (0)", function()
+
+    local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "0" then
+            local player = getPlayer()
+            if player then
+
+                  -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "The light will be with you",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").AngelBless:FireServer(unpack(args))
+
+
+end
+end
+end)
+end)
+
+Section:NewButton("Angel Bless All", "", function()
+
+        -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "The light will be with us",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+
+  SayMessageRequest:FireServer(unpack(args))
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+               -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").AngelBless:FireServer(unpack(args))
+
+
+            end
+        end
+    end
+
+end)
+
+Section:NewToggle("Fallen Blessing", "Keybind (Q)", function()
+
+local function getPlayer()
+        local userInput = game:GetService("UserInputService")
+        local cam = workspace.CurrentCamera
+        local mousePos = userInput:GetMouseLocation()
+        local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
+        players = {}
+        for _, x in next, game:GetService('Players'):GetPlayers() do
+            players[#players + 1] = x.Character
+        end
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+        raycastParams.FilterDescendantsInstances = players
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+        if raycastResult then
+            for _, x in next, game:GetService('Players'):GetPlayers() do
+                if not raycastResult.Instance:IsDescendantOf(x.Character) then
+                    continue
+                end
+                return x
+            end
+        end
+        return false
+    end
+
+    local function Set(list)
+        local set = {}
+        for _, l in ipairs(list) do
+            if l then
+                set[l] = true
+            end
+        end
+        return set
+    end
+
+    game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+        if key == "q" then
+            local player = getPlayer()
+            if player then
+
+                    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Let the darkness be with you",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").UnholyBlessing:FireServer(unpack(args))
+
+
+end
+end
+end)
+end)
+
+Section:NewButton("Fallen Bless All", "", function()
+
+      -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Let the darkness be with us",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+
+  SayMessageRequest:FireServer(unpack(args))
+    -- Script generated by ClaudiaSpy - credits to ClaudiaHOTM#2452
+    local Plr = game.Players.LocalPlayer
+    for i, Player in pairs(game.Players:GetPlayers()) do
+
+        if Player.Character ~= nil and Player ~= Plr then
+            local mag = (Player.Character.UpperTorso.Position - Plr.Character.UpperTorso.Position).magnitude
+            if mag < 10000 then
+                local Target = Player.Character or Player.CharacterAdded:Wait()
+
+
+               -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = Target.HitPart
+}
+
+game:GetService("ReplicatedStorage").UnholyBlessing:FireServer(unpack(args))
+
+
+            end
+        end
+    end
+
+end)
+
+
+local Tab = Window:NewTab("Powers")
+local Section = Tab:NewSection("Random Powers")
+
+Section:NewTextBox("Holy Fire Someone", "", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+
+       -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").HellFire3:FireServer(unpack(args))
+end)
+
+Section:NewTextBox("Hellfire Someone", "", function(txt)
+    local Players = game:GetService("Players")
+    local msg = txt
+    local function findPlayer(stringg)
+        for _, v in pairs(Players:GetPlayers()) do
+            if stringg:lower() == (v.Name:lower()):sub(1, #stringg) then
+                return v
+            end
+        end
+    end
+
+    local player = findPlayer(msg)
+    local CHAR = player.Character
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = player.Character.HitPart
+}
+
+game:GetService("ReplicatedStorage").HellFire2:FireServer(unpack(args))
+end)
+
+Section:NewButton("Burn Angel Wing", "", function()
+    game:GetService("ReplicatedStorage").BurnAngelWing:FireServer()
+end)
+
+Section:NewButton("Horns", "", function()
+    game:GetService("ReplicatedStorage").SpiritFused:FireServer()
+end)
+
+
+Section:NewButton("Sign Book", "", function()
+    game:GetService("ReplicatedStorage").HaveSigned:FireServer()
+end)
+
+Section:NewButton("Beam", "", function()
+    game:GetService("ReplicatedStorage").TeleportBeam1:FireServer()
+end)
+
+
+Section:NewButton("Lightning", "", function()
+    game:GetService("ReplicatedStorage").Lightning:FireServer()
+end)
+
+local Tab = Window:NewTab("Teleports")
+local Section = Tab:NewSection("Places")
+
+Section:NewButton("Moon Change", "", function()
+    game:GetService("ReplicatedStorage").MoonChange:FireServer()
+end)
+
+Section:NewButton("Heaven", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "With these words, I seek Hecate. Open to me this heaven portal",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    game:GetService("ReplicatedStorage").ToHeaven:FireServer()
+end)
+
+Section:NewButton("Leave Heaven", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "With these words, I seek Hecate. Open to me this portal to land of prophecy",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    game:GetService("ReplicatedStorage").OutHeaven:FireServer()
+end)
+
+Section:NewButton("Hell", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Through me, pass into the unholy kingdom. Through me, pass into the city of fear. I am the gate for the lost and forsaken. Abandon all hope, ye who enter here.",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    game:GetService("ReplicatedStorage").ToHell:FireServer()
+end)
+
+Section:NewButton("The Void", "", function()
+
+    -- Script generated by SimpleSpy - credits to exx#9394
+
+local args = {
+    [1] = "Magic mirror, to save all that will be destroyed... open up, and deliver me to... the Void.",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    game:GetService("ReplicatedStorage").TheVoidPor:FireServer()
+end)
+
+Section:NewButton("CON", "Teleport in Forest", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-81, 40, -376))
+
+end)
+
+Section:NewButton("Circle", "Teleport in Forest", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(247, 40, -308))
+
+end)
+
+Section:NewButton("Village", "Teleport in Forest", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-383, 21, -284))
+
+end)
+
+local Tab = Window:NewTab("Coins & Shop")
+local Section = Tab:NewSection("Buy anything you want :)")
+Section:NewButton("100m Coins", "", function()
+local args = {
+    [1] = 100000000
+}
+game:GetService("ReplicatedStorage").Remotes.GiveCurrency:FireServer(unpack(args))
+end)
+
+Section:NewButton("Greater Health Potion", "Heal", function()
+    
+local args = {
+    [1] = "Greater Health Potion"
+}
+
+game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+end)
+
+Section:NewButton("Size Potion", "Decrease your size", function()
+
+local args = {
+    [1] = "Size Potion"
+}
+
+game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Swiftness Potion", "Run Fast", function()
+
+local args = {
+    [1] = "Swiftness Potion"
+}
+
+game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Regeneration Potion", "Heal", function()
+
+local args = {
+    [1] = "Regeneration Potion"
+}
+
+game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Health Potion", "Heal", function()
+
+    local args = {
+        [1] = "Health Potion"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+    
+        print("Clicked")
+    end)
+
+    Section:NewButton("Buy Mind Stone", "ButtonInfo", function()
+        print("Clicked")
+        local args = {
+        [1] = "Bought Mind Stone"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+    end)
+
+    Section:NewButton("Buy Celestial Stone", "ButtonInfo", function()
+        print("Clicked")
+        local args = {
+        [1] = "Celestial Stone"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+    end)
+
+    Section:NewButton("Buy Dimensional Shards", "ButtonInfo", function()
+        print("Clicked")
+        local args = {
+        [1] = "Dimensional Shards"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+    end)
+
+    Section:NewButton("Sealing Amber", "", function()
+
+        local args = {
+            [1] = "Sealing Amber"
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+        
+            print("Clicked")
+        end)
+
+    Section:NewButton("Buy Nature Scroll", "ButtonInfo", function()
+        print("Clicked")
+        local args = {
+        [1] = "Nature Scroll"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+    end)
+
+    Section:NewButton("Buy Angelic Scroll", "ButtonInfo", function()
+        print("Clicked")
+        local args = {
+        [1] = "Angelic Scroll"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+    end)
+
+    Section:NewButton("Buy Magic Scroll", "ButtonInfo", function()
+        print("Clicked")
+        local args = {
+        [1] = "Magic Scroll"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+    end)
+
+    Section:NewButton("Buy Magic Candle", "ButtonInfo", function()
+        print("Clicked")
+        local args = {
+        [1] = "Magic Candle"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.BuyItem:FireServer(unpack(args))
+    end)
+
+    local Tab = Window:NewTab("Others")
+    local Section = Tab:NewSection("Misc")
+    
+    Section:NewButton("Infinite Yield", "Admin", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    end)
+    
+    Section:NewButton("Btools", "", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TheMorningstarCircle/Spellman/main/Btools"))()
+    end)
+    
+    Section:NewButton("CMD Admin", "", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TheMorningstarCircle/Spellman/main/CMD"))()
+    end)
+    
+    Section:NewButton("Dark Dex", "Dex", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TheMorningstarCircle/Spellman/main/Dex"))()
+    end)
+    
+    Section:NewButton("Simple Spy", "Remote Spy", function()
+        loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+    end)
+    
+    Section:NewButton("Hydroxide", "Remote Spy", function()
+        loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/TheMorningstarCircle/Spellman/main/Hydroxide', true))()
+    end)
+    
+    Section:NewButton("In-Line Translator", "Translate", function()
+        loadstring(game:HttpGetAsync('https://i.qts.life/r/ChatInlineTranslator.lua', true))()
+    end)
+    
+    local Tab = Window:NewTab("Credits")
+    local Section = Tab:NewSection("Created by ɹɐʇsɓuᴉuɹoW ɐuᴉɹqɐS")
+    
+    local Section = Tab:NewSection("Toggle UI")
+    Section:NewKeybind("Toggle UI", "Toggle UI", Enum.KeyCode.Zero, function()
+        Library:ToggleUI()
+    end)
+    
+    wait(1)
+    game.StarterGui:SetCore("SendNotification", { 
+        Title = "★ᵀʰᵉ ᴹᵒʳⁿⁱⁿᵍˢᵗᵃʳ ᶜⁱʳᶜˡᵉ★";
+        Text = "Magic Witchcraft V.2 GUI    ~~~~~~ Now Active ~~~~~~";               
+        Icon = "rbxthumb://type=Asset&id=10845688213&w=150&h=150";
+        Duration = "60";
+        Button1 = "Close";
+    })
