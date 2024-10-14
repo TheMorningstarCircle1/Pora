@@ -15718,6 +15718,7 @@ i y E [qoh] 9 [^YD] 4 2
     loadstring(game:HttpGet("https://raw.githubusercontent.com/JxcExploit/AutoPlayPianoScript/main/NewAutoPlayPiano"))()
 end)
 
+local Section = Tab:NewSection("Edison Lighthouse")
 
 Section:NewButton("Love Grows", "", function()
 
